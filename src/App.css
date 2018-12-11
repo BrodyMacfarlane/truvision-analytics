@@ -1,32 +1,134 @@
-.App {
+body, html, #root, .App, .sidebar-container {
+  height: 100%;
+}
+
+.reports-container {
+  height: calc(100% - 120px);
+}
+
+body {
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: 'Bebas Neue';
+  background-color: #001C23;
+  color: #FFF;
+}
+
+.navbar {
+  color: #2DB475;
+  background-color: #001C23;
+  width: 100%;
+  height: 120px;
+  font-weight: 100;
+  border-bottom: 1px solid;
+}
+
+.navbar-title {
   text-align: center;
+  vertical-align: bottom;
+  font-size: 48px;
+  line-height: 145px;
+  font-weight: 600;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.sidebar-container, .content {
+  vertical-align: top;
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar {
+  border-right: 1px solid #AAA;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+  width: 288px;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-option {
+  color: #AAA;
+  font-size: 36px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar-option:hover {
+  color: #DDD;
+  font-size: 48px;
+  transition: 0.2s ease-in-out;
+}
+
+.content {
+  margin-left: 12px;
+  height: 100%;
+  width: calc(100% - 312px);
+}
+
+.report-types-container {
+  text-align: right;
+}
+
+.report-type {
+  font-size: 16px;
+  padding: 3px;
+  margin: 9px;
+  opacity: 0.5;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.report-type-active {
+  opacity: 0.8;
+}
+
+.report-type:hover {
+  opacity: 0.8;
+}
+
+.report-main-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 42px;
+}
+
+.main-stat {
+  width: 33%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.main-stat-title, .main-stat-gauge {
+  margin-bottom: 22vh;
+}
+
+.main-stat-gauge {
+  font-size: 64px;
+}
+
+.main-stat-worst {
+  color: #B22F3F;
+}
+
+.main-stat-avg {
+  color: #EBEF41;
+}
+
+.main-stat-best {
+  color: #2DB475;
+}
+
+.report-title-container {
+  width: 100%;
+}
+
+.report-title {
+  color: #AAA;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 12px;
+}
+
+.rank-span {
+  color: #2F96B2;
 }
