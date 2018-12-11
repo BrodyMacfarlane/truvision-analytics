@@ -146,3 +146,60 @@ body {
 .rank-span {
   color: #2F96B2;
 }
+
+.distributors-container {
+  padding-top: 69px;
+  padding-bottom: 69px;
+  border-top: 1px solid #AAA;
+  text-align: center;
+}
+
+.distributors-title {
+  color: #AAA;
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.distributor {
+  width: 240px;
+  opacity: 0.9;
+  display: inline-block;
+  margin: 15px;
+  color: #FFF;
+}
+
+.distributor:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.main-profile-name-container, .main-profile-value {
+  padding: 12px;
+  font-size: 36px;
+  font-weight: 900;
+  background-color: rgb(0,0,0,0.5);
+}
+
+.main-profile-id {
+  font-size: 16px;
+}
+
+.profile-img {
+  margin: 12px;
+  width: 180px;
+  border-radius: 50%;
+  /* border: 12px solid; */
+}
+
+.red {
+  background-color: #B22F3F;
+}
+
+.yellow {
+  background-color: #EBEF41;
+}
+
+.green {
+  background-color: #2DB475;
+}
