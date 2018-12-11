@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import axios from 'axios';
 
+function getColor(value){
+  let percentvalue = value * 100;
+  if(percentvalue <= 32){
+    return "red"
+  }
+  else if(percentvalue > 32 && percentvalue < 67){
+    return "yellow"
+  }
+  else {
+    return "green"
+  }
+}
+
 const rankDictionary = {
   0: "None",
   30: "Senior Associate",
@@ -46,9 +59,9 @@ class Reports extends Component {
           avg: ((total/data.length) * 100).toFixed(2),
           high: (parseFloat(data[data.length - 1].value) * 100).toFixed(2)
         })
-        console.log(data.length, data[data.length - 1].value)
+        console.log(data)
 
-        this.setState({currentData: response.data})
+        this.setState({currentData: data})
       })
   }
 
@@ -106,7 +119,23 @@ class Reports extends Component {
             : null}
           </div>
           <div className="distributors-container component-container">
-              Test
+            <div className="distributors-title">Breakdown</div>
+            {
+              this.state.currentData.map((distributor, i) => {
+                return (
+                  <div key={i} className={`distributor distributor-data  ${getColor(i/(this.state.currentData.length - 1))}`}>
+                    <div className="main-profile-value">{(distributor.value * 100).toFixed(2)}%</div>
+                    <div className="main-profile-img-container">
+                      {this.state.currentData.length < 20 ? <img src={`https://truvision.corpadmin.directscale.com/BackOffice/ProfileImage?id=${distributor.associateid}`} alt="Profile Image" className={`profile-img`}/> : null}
+                    </div>
+                    <div className="main-profile-name-container">
+                      <div className="main-profile-name">{distributor.firstname} {distributor.lastname}</div>
+                      <div className="main-profile-id">{distributor.associateid}</div>
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </BrowserRouter>
