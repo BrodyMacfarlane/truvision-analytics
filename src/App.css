@@ -1,3 +1,17 @@
+@font-face {
+  font-family: Bebas;
+  src: url('./fonts/BebasNeueRegular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: BebasBold;
+  src: url('./fonts/BebasNeueBold.ttf') format('truetype');
+}
+
+* {
+  font-family: Bebas !important;
+}
+
 body, html, #root, .App, .sidebar-container {
   height: 100%;
 }
@@ -9,7 +23,7 @@ body, html, #root, .App, .sidebar-container {
 body {
   padding-left: 12px;
   padding-right: 12px;
-  font-family: 'Bebas Neue';
+  font-family: Bebas;
   background-color: #001C23;
   color: #FFF;
 }
